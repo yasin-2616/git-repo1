@@ -5,7 +5,7 @@
     service: "{{ service_name }}"  # This is the variable name
     state: enabled
     permanent: true
-  become: true
+  become: falls
   when: ansible_os_family == "RedHat"
   notify: reload firewall
 
