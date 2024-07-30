@@ -10,8 +10,9 @@
   notify: reload firewall
 
 handlers:
-  - name: reload firewall
+  - name: delete firewall
     firewalld:
       state: reloaded
     become: true
+    when: ansible_os_famiy == "redhat"
 
